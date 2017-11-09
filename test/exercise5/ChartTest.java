@@ -1,5 +1,6 @@
 package exercise5;
 
+import java.io.IOException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,7 +14,7 @@ public class ChartTest {
   private Chart top40pop;
   
   @Before
-  public void setUp() {
+  public void setUp() throws IOException {
     top40pop = new Chart("data/top40pop.csv");
   }
   
