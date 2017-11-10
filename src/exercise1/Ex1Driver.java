@@ -14,6 +14,9 @@ public class Ex1Driver {
     for (int i = 0; i < 10; i++) {
       numbers[i] = rnd.nextInt(10);
     }
+    System.out.println("hello");
+      System.out.println("  9\\\\////9");
+    
     task1();
     task2();
     task3();
