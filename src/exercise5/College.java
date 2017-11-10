@@ -3,7 +3,7 @@ package exercise5;
 /**
  * Class College
  * Task 5: Create a class College with the following private data members: String name, int rank. Implement setter method for the rank.
- * @author yasiro01
+ * @author debrsa01 Sage deBrum Assignment #5
  */
 public class College {
     private String name;

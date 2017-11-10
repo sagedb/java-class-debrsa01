@@ -3,7 +3,7 @@ package exercise5;
 /**
  * Class Laptop
  * Task 6: Create a class Laptop with the following private data members: String manufacturer, double price, String color. Implement setters for color and price.
- * @author yasiro01
+ * @author debrsa01 Sage deBrum Assignment #5
  */
 public class Laptop {
     private String manufacturer;

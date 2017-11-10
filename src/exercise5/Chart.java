@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
  * and put that object into a HashMap using a song position as a key. Implement method getSong 
  * that takes an integer position as a parameter and returns a Song at that position. 
  * 
- * @author yasiro01
+ * @author debrsa01 Sage deBrum Assignment #5
  */
 public class Chart {
     private HashMap<Integer, Song> chartHashMap = new HashMap();

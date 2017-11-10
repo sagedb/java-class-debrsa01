@@ -3,7 +3,7 @@ package exercise5;
 /**
  * Class Book
  * Task 2: Create a class Book with the following private data members: String title, String author, double price
- * @author yasiro01
+ * @author debrsa01 Sage deBrum Assignment #5
  */
 public class Book {
     private String title;

@@ -3,7 +3,7 @@ package exercise5;
 /**
  * Class Room
  * Task 1: Create a class Room with the following private data members: String building, int number
- * @author yasiro01
+ * @author debrsa01 Sage deBrum Assignment #5
  */
 public class Room {
     private String building;
