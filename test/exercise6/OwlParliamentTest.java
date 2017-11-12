@@ -1,5 +1,6 @@
 package exercise6;
 
+import java.io.IOException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -12,10 +13,12 @@ import static org.junit.Assert.*;
  * @author yasiro01
  */
 public class OwlParliamentTest {
-  OwlParliament instance1 = new OwlParliament("data/zoo1.txt");
-  OwlParliament instance2 = new OwlParliament("data/zoo2.txt");
+  OwlParliament instance1;
+  OwlParliament instance2;
   
-  public OwlParliamentTest() {
+  public OwlParliamentTest() throws IOException {
+        this.instance2 = new OwlParliament("data/zoo2.txt");
+        this.instance1 = new OwlParliament("data/zoo1.txt");
   }
   
   @BeforeClass

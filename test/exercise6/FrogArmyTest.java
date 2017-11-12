@@ -1,5 +1,6 @@
 package exercise6;
 
+import java.io.IOException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -12,10 +13,12 @@ import static org.junit.Assert.*;
  * @author yasiro01
  */
 public class FrogArmyTest {
-  FrogArmy instance1 = new FrogArmy("data/zoo1.txt");
-  FrogArmy instance2 = new FrogArmy("data/zoo2.txt");
+  FrogArmy instance1;
+  FrogArmy instance2;
   
-  public FrogArmyTest() {
+  public FrogArmyTest() throws IOException {
+        this.instance2 = new FrogArmy("data/zoo2.txt");
+        this.instance1 = new FrogArmy("data/zoo1.txt");
   }
   
   @BeforeClass
