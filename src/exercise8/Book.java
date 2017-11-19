@@ -14,6 +14,14 @@ public abstract class Book extends Item {
     this.publishingYear = publishingYear;
   }
 
+  public Book(String author, int publishingYear, long id, String title) {
+    super(id, title);
+    this.author = author;
+    this.publishingYear = publishingYear;
+    this.quantity = 1000; //just to get a high number in case
+  }
+  
+  
   /**
    * Get the value of author
    * @return the value of author
@@ -21,7 +29,7 @@ public abstract class Book extends Item {
   public String getAuthor() {
     return author;
   }
-
+  
   /**
    * Get the value of publishingYear
    * @return the value of publishingYear

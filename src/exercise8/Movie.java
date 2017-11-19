@@ -13,6 +13,12 @@ public abstract class Movie extends Item {
     this.director = director;
     this.releaseYear = releaseYear;
   }
+  
+  public Movie(String director, int releaseYear, long id, String title) {
+    super(id, title);
+    this.director = director;
+    this.releaseYear = releaseYear;
+  }
 
   /**
    * Get the value of director
