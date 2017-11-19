@@ -12,7 +12,7 @@ public class DigitalMovie extends Movie {
 
     public DigitalMovie(String service, String director, int releaseYear, long id, String title) {
         super(director, releaseYear, id, title);
-        int thequantity = 1000;
+        this.quantity = -1;
         this.service = service;
     }
 

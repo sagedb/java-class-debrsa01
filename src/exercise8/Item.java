@@ -65,9 +65,9 @@ public abstract class Item {
       this.quantity++;
   }
   
-  
+  @Override
   public String toString() {
-      return "We have "+Integer.toString(this.getQuantity())+" of "+this.getTitle();
+      return "We have "+Integer.toString(this.getQuantity())+" copies of "+this.getTitle();
   }
   
 
