@@ -32,6 +32,7 @@ public class converting extends javax.swing.JFrame {
         jComboBoxMeasurement1 = new javax.swing.JComboBox<>();
         jComboBoxMeasurement2 = new javax.swing.JComboBox<>();
         jButtonConvert = new javax.swing.JButton();
+        jLabelTitle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -56,40 +57,52 @@ public class converting extends javax.swing.JFrame {
             }
         });
 
+        jLabelTitle.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabelTitle.setText("Degree Conversion");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonConvert)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextFieldOutputDegrees, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
-                            .addComponent(jTextFieldInputDegrees))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBoxMeasurement2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxMeasurement1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap()
+                        .addComponent(jTextFieldOutputDegrees, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jComboBoxMeasurement2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jButtonConvert, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jTextFieldInputDegrees, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+                                    .addComponent(jComboBoxMeasurement1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGap(129, 129, 129)
+                            .addComponent(jLabelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addContainerGap()
+                .addComponent(jLabelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldInputDegrees, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldInputDegrees, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBoxMeasurement1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addComponent(jButtonConvert)
-                .addGap(30, 30, 30)
+                .addGap(25, 25, 25)
+                .addComponent(jButtonConvert, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldOutputDegrees, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTextFieldOutputDegrees, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBoxMeasurement2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addContainerGap(116, Short.MAX_VALUE))
         );
 
         pack();
@@ -105,15 +118,46 @@ public class converting extends javax.swing.JFrame {
         measurement1 = (String) jComboBoxMeasurement1.getSelectedItem();
         measurement2 = (String) jComboBoxMeasurement2.getSelectedItem();
         double inputdegrees;
-        inputdegrees = Double.parseDouble(jTextFieldInputDegrees.getText()); 
-        double outputdegrees; 
+        inputdegrees = Double.parseDouble(jTextFieldInputDegrees.getText());
+        double outputdegrees = inputdegrees;
         
-        if (measurement1 == "Celsius"){
+        try{
+            inputdegrees = Double.parseDouble(jTextFieldInputDegrees.getText()); 
+            outputdegrees = inputdegrees;
+        }
+        catch(Exception e){
+            System.out.println("Why can't people just type in numbers? Why do rebels exist?");
+            outputdegrees = 0.0;
+        }
+            
+             
+        
+        if ("Celsius".equals(measurement1)){
             if ("Fahrenheit".equals(measurement2)){
                 outputdegrees = Ex9Converter.c2f(inputdegrees);
-                jTextFieldOutputDegrees.setText(Double.toString(outputdegrees));
+            }
+            else if("Kelvin".equals(measurement2)){
+                outputdegrees = Ex9Converter.c2k(inputdegrees);
             }
         }
+        else if("Fahrenheit".equals(measurement1)){
+            if ("Celsius".equals(measurement2)){
+                outputdegrees = Ex9Converter.f2c(inputdegrees);
+            }
+            else if("Kelvin".equals(measurement2)){
+                outputdegrees = Ex9Converter.f2k(inputdegrees);
+            }
+        }
+        else if("Kelvin".equals(measurement1)){
+            if ("Celsius".equals(measurement2)){
+                outputdegrees = Ex9Converter.k2c(inputdegrees);
+            }
+            else if("Fahrenheit".equals(measurement2)){
+                outputdegrees = Ex9Converter.k2f(inputdegrees);
+            }
+        }
+        
+        jTextFieldOutputDegrees.setText(String.format("%.2f", outputdegrees));
         
     }//GEN-LAST:event_jButtonConvertActionPerformed
 
@@ -156,6 +200,7 @@ public class converting extends javax.swing.JFrame {
     private javax.swing.JButton jButtonConvert;
     private javax.swing.JComboBox<String> jComboBoxMeasurement1;
     private javax.swing.JComboBox<String> jComboBoxMeasurement2;
+    private javax.swing.JLabel jLabelTitle;
     private javax.swing.JTextField jTextFieldInputDegrees;
     private javax.swing.JTextField jTextFieldOutputDegrees;
     // End of variables declaration//GEN-END:variables
