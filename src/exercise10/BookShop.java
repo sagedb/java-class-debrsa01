@@ -54,7 +54,9 @@ public class BookShop {
   
     public BookShop(BookShop anotherBookShop) {
         this();
-        for ()
+        for (Book book: anotherBookShop.catalog){
+            this.addNewTitle(book);
+        }
         
     }
     
@@ -67,15 +69,23 @@ public class BookShop {
     }
 
     public void discountAll(Double discountPercent) {
+        for(Book book: this.catalog){
+            book.setPrice(book.getPrice() - (book.getPrice() / discountPercent));
+        }
     }
 
     public void printCatalog() {
+        for(Book book: this.catalog){
+            System.out.print(book.toString());
+        }
     }
 
     public void order(Comparator<Book> comp) {
+        
     }
 
     public ArrayList<Book> getCatalog() {
+        return this.catalog;
     }
 
 }

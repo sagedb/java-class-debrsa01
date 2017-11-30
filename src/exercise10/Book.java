@@ -75,7 +75,7 @@ public class Book {
     }
     
     public String toString(){
-        return String.format("%s (%s) by %s costs %.2f", this.getTitle(), this.getYear(), this.getAuthor(), this.getPrice());
+        return String.format("%s (%s) by %s costs $%.2f", this.getTitle(), this.getYear(), this.getAuthor(), this.getPrice());
     }
     
 }
