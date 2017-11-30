@@ -24,7 +24,7 @@ public class ComputerStore {
     this();
     inventory = (ArrayList<ComputerLaptop>)anotherStore.inventory.clone();
   }
-  
+
   public void addNewLaptop(ComputerLaptop cl) {
     inventory.add(cl);
   }

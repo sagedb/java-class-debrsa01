@@ -17,32 +17,65 @@ import java.util.regex.Pattern;
  * @author yasiro01
  */
 public class BookShop {
+    ArrayList<Book> catalog;
 
   public BookShop() {
+      catalog = new ArrayList<Book>();
   }
   
-  public BookShop(String filename) throws FileNotFoundException {
-  }
+    public BookShop(String filename) throws FileNotFoundException, IOException {
+        this();
+        String line = null;
+        Book aBook;
+
+        try {
+            // FileReader reads text files in the default encoding.
+            FileReader fileReader = 
+                new FileReader(filename);
+
+            // Always wrap FileReader in BufferedReader.
+            BufferedReader bufferedReader = 
+                new BufferedReader(fileReader);
+
+            while((line = bufferedReader.readLine()) != null) {
+                //System.out.println(line);
+                String[] eachitem = line.split(",");
+                aBook = new Book(eachitem[0], eachitem[1], Double.parseDouble(eachitem[2]), Integer.parseInt(eachitem[3]));
+                this.addNewTitle(aBook);
+            }   
+
+            // Always close files.
+            bufferedReader.close();         
+        }
+        catch(FileNotFoundException ex){
+            throw new FileNotFoundException();
+        }
+    }
   
-  public BookShop(BookShop anotherBookShop) {
-  }
-  
-  public void addNewTitle(Book book) {
-  }
-  
-  public int size() {
-  }
-  
-  public void discountAll(Double discountPercent) {
-  }
-  
-  public void printCatalog() {
-  }
-  
-  public void order(Comparator<Book> comp) {
-  }
-  
-  public ArrayList<Book> getCatalog() {
-  }
+    public BookShop(BookShop anotherBookShop) {
+        this();
+        for ()
+        
+    }
+    
+    public void addNewTitle(Book book) {
+        this.catalog.add(book);
+    }
+
+    public int size() {
+        return catalog.size();
+    }
+
+    public void discountAll(Double discountPercent) {
+    }
+
+    public void printCatalog() {
+    }
+
+    public void order(Comparator<Book> comp) {
+    }
+
+    public ArrayList<Book> getCatalog() {
+    }
 
 }
