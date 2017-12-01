@@ -33,7 +33,7 @@ public class Book {
     }
 
     public Double getPrice() {
-        return price;
+        return Double.parseDouble(String.format("%.2f", price));
     }
 
     public Integer getYear() {

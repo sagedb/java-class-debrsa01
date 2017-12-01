@@ -70,18 +70,27 @@ public class BookShop {
 
     public void discountAll(Double discountPercent) {
         for(Book book: this.catalog){
-            book.setPrice(book.getPrice() - (book.getPrice() / discountPercent));
+            book.setPrice(book.getPrice() - Double.parseDouble(String.format("%.2f", book.getPrice()*(discountPercent/100))));
         }
     }
 
     public void printCatalog() {
+        int num = 1;
         for(Book book: this.catalog){
-            System.out.print(book.toString());
+            System.out.print(book.toString()+"\n");
+//            if (num<this.size()){
+//                System.out.println(book.toString());
+//                num++;
+//            }
+//            else{
+//                System.out.print(book.toString());
+//            }
+        
         }
     }
 
     public void order(Comparator<Book> comp) {
-        
+        Collections.sort(catalog, comp);
     }
 
     public ArrayList<Book> getCatalog() {
