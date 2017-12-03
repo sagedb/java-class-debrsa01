@@ -3,6 +3,7 @@ package exercise11;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 
 /**
  * Exercise 11 logic
@@ -65,7 +66,7 @@ public class Ex11Logic {
    */
   // TODO: Implement method findMinItem
 
-    public <T extends Comparable> T findMinItem(T ... list) {
+    public static <T extends Comparable> T findMinItem(List<T> list) {
         T min = null;
         for (T item : list){
 //            System.out.println(item);
